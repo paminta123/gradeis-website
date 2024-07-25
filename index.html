@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="stylesheet" href="script.js">
+     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Inquiry System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="loginForm" class="form active">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p class="switch-form">Don't have an account? <a href="#" id="showCreateAccount">Create Account</a></p>
+        </form>
+        
+        <form id="createAccountForm" class="form">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <label for="create-username">Username</label>
+                <input type="text" id="create-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="create-password">Password</label>
+                <input type="password" id="create-password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="role">Role</label>
+                <select id="role" name="role" required>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+            </div>
+            <button type="submit">Create Account</button>
+            <p class="switch-form">Already have an account? <a href="#" id="showLogin">Login</a></p>
+        </form>
+    </div>
+
+    <div id="studentDashboard" class="dashboard">
+        <h2>Student Dashboard</h2>
+        <p id="studentInfo"></p>
+        <h3>Your Grades</h3>
+        <table id="gradesTable">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="logout">Logout</button>
+    </div>
+
+    <div id="teacherDashboard" class="dashboard">
+        <h2>Teacher Dashboard</h2>
+        <p id="teacherInfo"></p>
+        <h3>Manage Grades</h3>
+        <div class="input-group">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName">
+        </div>
+        <div class="input-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject">
+        </div>
+        <div class="input-group">
+            <label for="grade">Grade</label>
+            <input type="text" id="grade">
+        </div>
+        <button id="addGrade">Add Grade</button>
+        <table id="allGradesTable">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="logoutTeacher">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
